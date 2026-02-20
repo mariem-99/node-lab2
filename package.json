@@ -1,0 +1,7 @@
+{
+ "type": "module",
+ "scripts": {
+ "lab2-modern": "node Lab2_Modern.mjs"
+ }
+}
+

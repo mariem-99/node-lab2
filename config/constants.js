@@ -1,0 +1,18 @@
+// config/constants.js
+// CONFIGURATION CONSTANTS
+const MAX_EVENT_TITLE_LENGTH = 100;
+const MAX_EVENT_DESCRIPTION_LENGTH = 1000;
+const MIN_EVENT_CAPACITY = 1;
+const MAX_EVENT_CAPACITY = 10000;
+const PASSWORD_MIN_LENGTH = 6;
+const EVENT_STATUSES = ['upcoming', 'ongoing', 'completed', 'cancelled'];
+const USER_ROLES = ['user', 'organizer', 'admin'];
+module.exports = {
+ MAX_EVENT_TITLE_LENGTH,
+ MAX_EVENT_DESCRIPTION_LENGTH,
+ MIN_EVENT_CAPACITY,
+ MAX_EVENT_CAPACITY,
+ PASSWORD_MIN_LENGTH,
+ EVENT_STATUSES,
+ USER_ROLES
+};

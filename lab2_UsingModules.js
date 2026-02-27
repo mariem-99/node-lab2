@@ -60,3 +60,19 @@ const env = require('./config/environment');
 console.log(`App: ${env.app_name}`);
 console.log(`Port: ${env.port}`);
 console.log(`Environment: ${env.env}`);
+// BONUS: More validators and a logger
+const { validateUsername, validatePhoneNumber, validateUrl } = require('./utils/validators');
+const { log, logError, logSuccess } = require('./utils/logger');
+
+console.log('\nBONUS 1: More validators\n');
+console.log('Username "jo":', validateUsername('jo'));
+console.log('Username "john_doe":', validateUsername('john_doe'));
+console.log('Phone "+1 800 555 1234":', validatePhoneNumber('+1 800 555 1234'));
+console.log('Phone "abc":', validatePhoneNumber('abc'));
+console.log('URL "https://google.com":', validateUrl('https://google.com'));
+console.log('URL "not-a-url":', validateUrl('not-a-url'));
+
+console.log('\nBONUS 2: Logger\n');
+log('App started');
+logSuccess('User registered successfully');
+logError('Database connection failed');

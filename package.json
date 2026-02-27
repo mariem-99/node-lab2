@@ -1,7 +1,15 @@
 {
- "type": "module",
- "scripts": {
- "lab2-modern": "node Lab2_Modern.mjs"
- }
+  "name": "event-management-system",
+  "version": "1.0.0",
+  "description": "Node.js learning labs",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "lab2": "node lab2_UsingModules.js",
+    "lab2-modern": "node Lab2_Modern.mjs",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "dotenv": "^16.6.1"
+  }
 }
-

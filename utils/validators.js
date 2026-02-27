@@ -37,9 +37,46 @@ function validatePassword(password) {
  }
  return { isValid: true };
 }
+// Additional validators 
+//username, phone number, URL
+function validateUsername(username) {
+  if (!username || username.trim() === '') {
+    return { isValid: false, message: 'Username is required' };
+  }
+  if (username.length < 3) {
+    return { isValid: false, message: 'Username must be at least 3 characters' };
+  }
+  if (username.length > 20) {
+    return { isValid: false, message: 'Username cannot exceed 20 characters' };
+  }
+  if (!/^[a-zA-Z0-9_]+$/.test(username)) {
+    return { isValid: false, message: 'Username can only contain letters, numbers, and underscores' };
+  }
+  return { isValid: true };
+}
+
+function validatePhoneNumber(phone) {
+  const phoneRegex = /^\+?[\d\s\-()]{7,15}$/;
+  if (!phoneRegex.test(phone)) {
+    return { isValid: false, message: 'Invalid phone number format' };
+  }
+  return { isValid: true };
+}
+
+function validateUrl(url) {
+  try {
+    new URL(url);
+    return { isValid: true };
+  } catch {
+    return { isValid: false, message: 'Invalid URL format' };
+  }
+}
 // EXPORT these functions so other files can use them
 module.exports = {
- validateEvent,
- validateEmail,
- validatePassword
+  validateEvent,
+  validateEmail,
+  validatePassword,
+  validateUsername,
+  validatePhoneNumber,
+  validateUrl
 };
